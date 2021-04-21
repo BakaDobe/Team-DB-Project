@@ -19,3 +19,8 @@ DROP TABLE AIRLINE;
 DROP TABLE TRAVELER;
 DROP TABLE AIRPORT;
 
+DROP SEQUENCE airline_flight_fk_sequence;
+DROP SEQUENCE airline_airplane_fk_sequence;
+DROP SEQUENCE flight_airplane_sequence;
+DROP SEQUENCE traveler_luggage_fk_sequence;
+DROP SEQUENCE flight_luggage_fk_sequence;
