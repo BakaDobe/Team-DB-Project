@@ -286,34 +286,34 @@ INSERT INTO LUGGAGE(LUGGAGE_ID, L_WEIGHT, L_NUMOFLUGGAGE, TRAVELER_ID, FLIGHT_ID
 
 --Boarding pass
 INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
-    VALUES(DEFAULT, '2021-09-17', '2022-02-17', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL); 
+    VALUES(DEFAULT, '2021-09-17', '2022-02-17', 'Economy', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL); 
     
 INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
-    VALUES(DEFAULT, '2020-12-24', '2021-06-03', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL);
+    VALUES(DEFAULT, '2020-12-24', '2021-06-03', 'Economy', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL);
 
 INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
-    VALUES(DEFAULT, '2021-01-02', '2021-12-29', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL); 
+    VALUES(DEFAULT, '2021-01-02', '2021-12-29', 'Business', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL); 
     
 INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
-    VALUES(DEFAULT, '2020-10-27', '2021-09-17', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL);
+    VALUES(DEFAULT, '2020-10-27', '2021-09-17', 'Business', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL);
     
 INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
-    VALUES(DEFAULT, '2021-09-17', '2021-09-17', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL); 
+    VALUES(DEFAULT, '2020-12-29', '2021-04-30', 'Business', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL); 
     
 INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
-    VALUES(DEFAULT, '2021-09-17', '2021-09-17', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL);
+    VALUES(DEFAULT, '2021-04-16', '2022-01-24', 'Economy', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL);
 
 INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
-    VALUES(DEFAULT, '2021-09-17', '2021-09-17', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL); 
+    VALUES(DEFAULT, '2021-02-28', '2021-12-20', 'Business', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL); 
     
 INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
-    VALUES(DEFAULT, '2021-09-17', '2021-09-17', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL);
+    VALUES(DEFAULT, '2021-01-17', '2022-02-15', 'Economy', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL);
 
 INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
-    VALUES(DEFAULT, '2021-09-17', '2021-09-17', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL); 
+    VALUES(DEFAULT, '2020-11-10', '2021-04-16', 'Premium economy', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL); 
     
 INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
-    VALUES(DEFAULT, '2021-09-17', '2021-09-17', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL);
+    VALUES(DEFAULT, '2020-05-31', '2021-07-14', 'Economy', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL);
     
 --Hotel
 INSERT INTO HOTEL(HOTEL_ID, H_ROOMNUM, H_ADDRESS, H_PHONENUM, TRAVELER_ID)
