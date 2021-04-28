@@ -44,6 +44,60 @@ CREATE SEQUENCE flight_luggage_fk_sequence
     NOCACHE
     NOCYCLE;
     
+CREATE SEQUENCE ticket_agent_fk_sequence
+    INCREMENT BY 5
+    START WITH 1000
+    NOCACHE
+    NOCYCLE;
+    
+CREATE SEQUENCE airport_agent_fk_sequence
+    INCREMENT BY 1
+    START WITH 1350
+    NOCACHE
+    NOCYCLE;
+
+CREATE SEQUENCE airport_boardingpass_fk_sequence
+    INCREMENT BY 1
+    START WITH 1350
+    NOCACHE
+    NOCYCLE;
+    
+CREATE SEQUENCE traveler_boardingpass_fk_sequence
+    INCREMENT BY 1
+    START WITH 10
+    NOCACHE
+    NOCYCLE;
+    
+CREATE SEQUENCE traveler_hotel_fk_sequence
+    INCREMENT BY 1
+    START WITH 10
+    NOCACHE
+    NOCYCLE;
+        
+CREATE SEQUENCE plane_pilot_fk_sequence
+    INCREMENT BY 1
+    START WITH 100
+    NOCACHE
+    NOCYCLE;
+    
+CREATE SEQUENCE traveler_ticket_fk_sequence
+    INCREMENT BY 1
+    START WITH 10
+    NOCACHE
+    NOCYCLE;
+    
+CREATE SEQUENCE airline_ticket_fk_sequence
+    INCREMENT BY 1
+    START WITH 51
+    NOCACHE
+    NOCYCLE;
+    
+CREATE SEQUENCE flight_ticket_fk_sequence
+    INCREMENT BY 1
+    START WITH 20
+    NOCACHE
+    NOCYCLE;
+    
 --Airport
 INSERT INTO AIRPORT (AIRPORT_ID, A_ADDRESS, A_PROVINCE, A_PHONENUM,A_POSTALCODE )
     VALUES(DEFAULT,'Romeo-Vachon Blvd N,Dorval', 'Quebec','(514) 394-7377', 'H4Y 1H1');
@@ -229,5 +283,158 @@ INSERT INTO LUGGAGE(LUGGAGE_ID, L_WEIGHT, L_NUMOFLUGGAGE, TRAVELER_ID, FLIGHT_ID
     
 INSERT INTO LUGGAGE(LUGGAGE_ID, L_WEIGHT, L_NUMOFLUGGAGE, TRAVELER_ID, FLIGHT_ID)
     VALUES(DEFAULT, '2kg', '1', traveler_luggage_fk_sequence.NEXTVAL,flight_luggage_fk_sequence.NEXTVAL);
+
+--Boarding pass
+INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
+    VALUES(DEFAULT, '2021-09-17', '2022-02-17', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL); 
     
+INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
+    VALUES(DEFAULT, '2020-12-24', '2021-06-03', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL);
+
+INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
+    VALUES(DEFAULT, '2021-01-02', '2021-12-29', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL); 
     
+INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
+    VALUES(DEFAULT, '2020-10-27', '2021-09-17', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL);
+    
+INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
+    VALUES(DEFAULT, '2021-09-17', '2021-09-17', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL); 
+    
+INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
+    VALUES(DEFAULT, '2021-09-17', '2021-09-17', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL);
+
+INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
+    VALUES(DEFAULT, '2021-09-17', '2021-09-17', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL); 
+    
+INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
+    VALUES(DEFAULT, '2021-09-17', '2021-09-17', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL);
+
+INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
+    VALUES(DEFAULT, '2021-09-17', '2021-09-17', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL); 
+    
+INSERT INTO BOARDINGPASS(B_BOARDINGPASS_ID, B_DATEISSUED, B_TRAVELDATE, B_CLASSTYPE, AIRPORT_ID, TRAVELER_ID)
+    VALUES(DEFAULT, '2021-09-17', '2021-09-17', 'A', airport_boardingpass_fk_sequence.NEXTVAL, traveler_boardingpass_fk_sequence.NEXTVAL);
+    
+--Hotel
+INSERT INTO HOTEL(HOTEL_ID, H_ROOMNUM, H_ADDRESS, H_PHONENUM, TRAVELER_ID)
+    VALUES(DEFAULT, '204', '800 Place Leigh Capreol, Dorval', '514-636-6700', traveler_hotel_fk_sequence.NEXTVAL); 
+    
+INSERT INTO HOTEL(HOTEL_ID, H_ROOMNUM, H_ADDRESS, H_PHONENUM, TRAVELER_ID)
+    VALUES(DEFAULT, '312', '221 Carlingview Dr, Etobicoke', '416-675-3303', traveler_hotel_fk_sequence.NEXTVAL); 
+    
+INSERT INTO HOTEL(HOTEL_ID, H_ROOMNUM, H_ADDRESS, H_PHONENUM, TRAVELER_ID)
+    VALUES(DEFAULT, '109', '2001 Airport Rd NE, Calgary', '403-291-2600', traveler_hotel_fk_sequence.NEXTVAL); 
+    
+INSERT INTO HOTEL(HOTEL_ID, H_ROOMNUM, H_ADDRESS, H_PHONENUM, TRAVELER_ID)
+    VALUES(DEFAULT, '118', '40 Silver Dart Dr, Enfield', '902-334-0136', traveler_hotel_fk_sequence.NEXTVAL); 
+    
+INSERT INTO HOTEL(HOTEL_ID, H_ROOMNUM, H_ADDRESS, H_PHONENUM, TRAVELER_ID)
+    VALUES(DEFAULT, '406', '140 Trans Canada Hwy, Duncan', '9', traveler_hotel_fk_sequence.NEXTVAL); 
+    
+INSERT INTO HOTEL(HOTEL_ID, H_ROOMNUM, H_ADDRESS, H_PHONENUM, TRAVELER_ID)
+    VALUES(DEFAULT, '101', '1750 Sargent Ave, Winnipeg', '204-775-7263', traveler_hotel_fk_sequence.NEXTVAL); 
+ 
+INSERT INTO HOTEL(HOTEL_ID, H_ROOMNUM, H_ADDRESS, H_PHONENUM, TRAVELER_ID)
+    VALUES(DEFAULT, '109', '2651 Cameron St, Regina', '1-855-877-6363', traveler_hotel_fk_sequence.NEXTVAL); 
+    
+INSERT INTO HOTEL(HOTEL_ID, H_ROOMNUM, H_ADDRESS, H_PHONENUM, TRAVELER_ID)
+    VALUES(DEFAULT, '18', '5 Cherrywood Dr, Happy Valley-Goose Bay', '709-896-4000', traveler_hotel_fk_sequence.NEXTVAL); 
+    
+INSERT INTO HOTEL(HOTEL_ID, H_ROOMNUM, H_ADDRESS, H_PHONENUM, TRAVELER_ID)
+    VALUES(DEFAULT, '229', '2080 Hwy 61, Thunder Bay', '1-877-772-3297', traveler_hotel_fk_sequence.NEXTVAL); 
+ 
+INSERT INTO HOTEL(HOTEL_ID, H_ROOMNUM, H_ADDRESS, H_PHONENUM, TRAVELER_ID)
+    VALUES(DEFAULT, '238', '250 Brackley Point Rd, Charlottetown', '902-368-3727', traveler_hotel_fk_sequence.NEXTVAL); 
+ 
+--Pilot
+INSERT INTO PILOT(PILOT_ID, P_LNAME, P_FNAME, P_AGE, P_YEARSOFSERVICE, PLANE_ID)
+    VALUES(DEFAULT, 'Smith', 'Teresa', '25', '2', plane_pilot_fk_sequence.NEXTVAL); 
+    
+INSERT INTO PILOT(PILOT_ID, P_LNAME, P_FNAME, P_AGE, P_YEARSOFSERVICE, PLANE_ID)
+    VALUES(DEFAULT, 'Williams', 'Scott', '46', '23', plane_pilot_fk_sequence.NEXTVAL); 
+
+INSERT INTO PILOT(PILOT_ID, P_LNAME, P_FNAME, P_AGE, P_YEARSOFSERVICE, PLANE_ID)
+    VALUES(DEFAULT, 'Knight', 'Martin', '34', '2', plane_pilot_fk_sequence.NEXTVAL); 
+    
+INSERT INTO PILOT(PILOT_ID, P_LNAME, P_FNAME, P_AGE, P_YEARSOFSERVICE, PLANE_ID)
+    VALUES(DEFAULT, 'James', 'Rose', '28', '7', plane_pilot_fk_sequence.NEXTVAL);     
+
+INSERT INTO PILOT(PILOT_ID, P_LNAME, P_FNAME, P_AGE, P_YEARSOFSERVICE, PLANE_ID)
+    VALUES(DEFAULT, 'Watson', 'Paul', '45', '102', plane_pilot_fk_sequence.NEXTVAL); 
+    
+INSERT INTO PILOT(PILOT_ID, P_LNAME, P_FNAME, P_AGE, P_YEARSOFSERVICE, PLANE_ID)
+    VALUES(DEFAULT, 'Adams', 'Jones', '39', '15', plane_pilot_fk_sequence.NEXTVAL); 
+
+INSERT INTO PILOT(PILOT_ID, P_LNAME, P_FNAME, P_AGE, P_YEARSOFSERVICE, PLANE_ID)
+    VALUES(DEFAULT, 'Murray', 'Harold', '34', '12', plane_pilot_fk_sequence.NEXTVAL); 
+    
+INSERT INTO PILOT(PILOT_ID, P_LNAME, P_FNAME, P_AGE, P_YEARSOFSERVICE, PLANE_ID)
+    VALUES(DEFAULT, 'Fisher', 'Albert', '23', '1', plane_pilot_fk_sequence.NEXTVAL); 
+
+INSERT INTO PILOT(PILOT_ID, P_LNAME, P_FNAME, P_AGE, P_YEARSOFSERVICE, PLANE_ID)
+    VALUES(DEFAULT, 'Johnson', 'Aaron', '27', '5', plane_pilot_fk_sequence.NEXTVAL); 
+    
+INSERT INTO PILOT(PILOT_ID, P_LNAME, P_FNAME, P_AGE, P_YEARSOFSERVICE, PLANE_ID)
+    VALUES(DEFAULT, 'Lloyd', 'Diona', '26', '4', plane_pilot_fk_sequence.NEXTVAL); 
+    
+--Ticket
+INSERT INTO TICKET(TICKET_ID, TRAVELER_ID, AIRLINE_ID, FLIGHT_ID)
+    VALUES(DEFAULT, traveler_ticket_fk_sequence.NEXTVAL, airline_ticket_fk_sequence.NEXTVAL, flight_ticket_fk_sequence.NEXTVAL); 
+    
+INSERT INTO TICKET(TICKET_ID, TRAVELER_ID, AIRLINE_ID, FLIGHT_ID)
+    VALUES(DEFAULT, traveler_ticket_fk_sequence.NEXTVAL, airline_ticket_fk_sequence.NEXTVAL, flight_ticket_fk_sequence.NEXTVAL); 
+    
+INSERT INTO TICKET(TICKET_ID, TRAVELER_ID, AIRLINE_ID, FLIGHT_ID)
+    VALUES(DEFAULT, traveler_ticket_fk_sequence.NEXTVAL, airline_ticket_fk_sequence.NEXTVAL, flight_ticket_fk_sequence.NEXTVAL); 
+    
+INSERT INTO TICKET(TICKET_ID, TRAVELER_ID, AIRLINE_ID, FLIGHT_ID)
+    VALUES(DEFAULT, traveler_ticket_fk_sequence.NEXTVAL, airline_ticket_fk_sequence.NEXTVAL, flight_ticket_fk_sequence.NEXTVAL); 
+    
+INSERT INTO TICKET(TICKET_ID, TRAVELER_ID, AIRLINE_ID, FLIGHT_ID)
+    VALUES(DEFAULT, traveler_ticket_fk_sequence.NEXTVAL, airline_ticket_fk_sequence.NEXTVAL, flight_ticket_fk_sequence.NEXTVAL); 
+    
+INSERT INTO TICKET(TICKET_ID, TRAVELER_ID, AIRLINE_ID, FLIGHT_ID)
+    VALUES(DEFAULT, traveler_ticket_fk_sequence.NEXTVAL, airline_ticket_fk_sequence.NEXTVAL, flight_ticket_fk_sequence.NEXTVAL); 
+    
+INSERT INTO TICKET(TICKET_ID, TRAVELER_ID, AIRLINE_ID, FLIGHT_ID)
+    VALUES(DEFAULT, traveler_ticket_fk_sequence.NEXTVAL, airline_ticket_fk_sequence.NEXTVAL, flight_ticket_fk_sequence.NEXTVAL); 
+    
+INSERT INTO TICKET(TICKET_ID, TRAVELER_ID, AIRLINE_ID, FLIGHT_ID)
+    VALUES(DEFAULT, traveler_ticket_fk_sequence.NEXTVAL, airline_ticket_fk_sequence.NEXTVAL, flight_ticket_fk_sequence.NEXTVAL); 
+    
+INSERT INTO TICKET(TICKET_ID, TRAVELER_ID, AIRLINE_ID, FLIGHT_ID)
+    VALUES(DEFAULT, traveler_ticket_fk_sequence.NEXTVAL, airline_ticket_fk_sequence.NEXTVAL, flight_ticket_fk_sequence.NEXTVAL); 
+    
+INSERT INTO TICKET(TICKET_ID, TRAVELER_ID, AIRLINE_ID, FLIGHT_ID)
+    VALUES(DEFAULT, traveler_ticket_fk_sequence.NEXTVAL, airline_ticket_fk_sequence.NEXTVAL, flight_ticket_fk_sequence.NEXTVAL); 
+    
+--Airport agent
+INSERT INTO AIRPORTAGENT(AIRPORTAGENT_ID, AA_LNAME, AA_FNAME, TICKET_ID, AIRPORT_ID)
+    VALUES(DEFAULT, 'Cook', 'Paul', ticket_agent_fk_sequence.NEXTVAL, airport_agent_fk_sequence.NEXTVAL); 
+
+INSERT INTO AIRPORTAGENT(AIRPORTAGENT_ID, AA_LNAME, AA_FNAME, TICKET_ID, AIRPORT_ID)
+    VALUES(DEFAULT, 'Cooper', 'Conner', ticket_agent_fk_sequence.NEXTVAL, airport_agent_fk_sequence.NEXTVAL); 
+
+INSERT INTO AIRPORTAGENT(AIRPORTAGENT_ID, AA_LNAME, AA_FNAME, TICKET_ID, AIRPORT_ID)
+    VALUES(DEFAULT, 'Bailey', 'Danna', ticket_agent_fk_sequence.NEXTVAL, airport_agent_fk_sequence.NEXTVAL); 
+
+INSERT INTO AIRPORTAGENT(AIRPORTAGENT_ID, AA_LNAME, AA_FNAME, TICKET_ID, AIRPORT_ID)
+    VALUES(DEFAULT, 'Lee', 'Alice', ticket_agent_fk_sequence.NEXTVAL, airport_agent_fk_sequence.NEXTVAL); 
+
+INSERT INTO AIRPORTAGENT(AIRPORTAGENT_ID, AA_LNAME, AA_FNAME, TICKET_ID, AIRPORT_ID)
+    VALUES(DEFAULT, 'Palmer', 'Luisa', ticket_agent_fk_sequence.NEXTVAL, airport_agent_fk_sequence.NEXTVAL); 
+
+INSERT INTO AIRPORTAGENT(AIRPORTAGENT_ID, AA_LNAME, AA_FNAME, TICKET_ID, AIRPORT_ID)
+    VALUES(DEFAULT, 'Harvey', 'Adrian', ticket_agent_fk_sequence.NEXTVAL, airport_agent_fk_sequence.NEXTVAL); 
+
+INSERT INTO AIRPORTAGENT(AIRPORTAGENT_ID, AA_LNAME, AA_FNAME, TICKET_ID, AIRPORT_ID)
+    VALUES(DEFAULT, 'Jackson', 'Nicole', ticket_agent_fk_sequence.NEXTVAL, airport_agent_fk_sequence.NEXTVAL); 
+
+INSERT INTO AIRPORTAGENT(AIRPORTAGENT_ID, AA_LNAME, AA_FNAME, TICKET_ID, AIRPORT_ID)
+    VALUES(DEFAULT, 'Patel', 'Gerald', ticket_agent_fk_sequence.NEXTVAL, airport_agent_fk_sequence.NEXTVAL); 
+
+INSERT INTO AIRPORTAGENT(AIRPORTAGENT_ID, AA_LNAME, AA_FNAME, TICKET_ID, AIRPORT_ID)
+    VALUES(DEFAULT, 'Stevens', 'Paul', ticket_agent_fk_sequence.NEXTVAL, airport_agent_fk_sequence.NEXTVAL); 
+
+INSERT INTO AIRPORTAGENT(AIRPORTAGENT_ID, AA_LNAME, AA_FNAME, TICKET_ID, AIRPORT_ID)
+    VALUES(DEFAULT, 'Fisher', 'Carlos', ticket_agent_fk_sequence.NEXTVAL, airport_agent_fk_sequence.NEXTVAL); 
