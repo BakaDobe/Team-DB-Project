@@ -1,0 +1,81 @@
+/*
+* Team Project
+*
+*@author Alvin Alagos Eli, De Ander Powell Mckain, Alexandra Vovc
+*@date 2021-05-03
+*@version 1.0
+*
+*/
+
+ CREATE OR REPLACE PROCEDURE proc_traveler_info(p_traveler_id in NUMBER) 
+  is
+   CURSOR c_traveler_info IS
+     SELECT t.traveler_id,t.t_fname, t.t_lname, l.l_numofluggage, h.h_address, ti.ticket_id, a.al_company, f.f_route
+     FROM TRAVELER t, LUGGAGE l, HOTEL h, TICKET ti, AIRLINE a, FLIGHT f
+     WHERE p_traveler_id = t.traveler_id; 
+        
+r_traveler_info c_traveler_info%ROWTYPE;
+
+    
+  BEGIN
+    
+    OPEN c_traveler_info;
+    FETCH c_traveler_info INTO r_traveler_info;
+    CLOSE c_traveler_info;
+    dbms_output.put_line('-----------------------------------------------------------------------');
+    dbms_output.put_line('Traveller id: ' || r_traveler_info.traveler_id);
+    dbms_output.put_line('Full Name: ' || r_traveler_info.t_fname ||' ' || r_traveler_info.t_lname);
+    dbms_output.put_line('Number of luggage carrying: ' || r_traveler_info.l_numofluggage);
+    dbms_output.put_line('Ticket id: ' || r_traveler_info.ticket_id);
+    dbms_output.put_line('Flying with: ' || r_traveler_info.al_company);
+    dbms_output.put_line('Destination :' || r_traveler_info.f_route);
+    dbms_output.put_line('-----------------------------------------------------------------------');
+    
+  EXCEPTION
+    WHEN no_data_found
+    THEN
+         dbms_output.put_line('This id is not associated with any record');
+         
+  END;
+/
+
+--1st anonymous block
+DECLARE
+  P_TRAVELER_ID NUMBER;
+BEGIN
+  P_TRAVELER_ID := 10;
+
+  PROC_TRAVELER_INFO(
+    P_TRAVELER_ID => P_TRAVELER_ID
+  );
+--rollback; 
+END;
+/
+
+--2nd anonymous block
+DECLARE
+  P_TRAVELER_ID NUMBER;
+BEGIN
+  P_TRAVELER_ID := 13;
+
+  PROC_TRAVELER_INFO(
+    P_TRAVELER_ID => P_TRAVELER_ID
+  );
+--rollback; 
+END;
+/
+
+--3rd anonymous block
+DECLARE
+  P_TRAVELER_ID NUMBER;
+BEGIN
+  P_TRAVELER_ID := 15;
+
+  PROC_TRAVELER_INFO(
+    P_TRAVELER_ID => P_TRAVELER_ID
+  );
+--rollback; 
+END;
+/
+
+
