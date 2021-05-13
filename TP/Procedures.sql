@@ -7,6 +7,8 @@
 *
 */
 
+--This procedure will retrieve information about the traveller travelling info. It will receive the traveler_id as input
+--The output will generate the traveller's id , full name, number of luggages carrying, ticket id, airline company they are flying with and its destination.
  CREATE OR REPLACE PROCEDURE proc_traveler_info(p_traveler_id in NUMBER) 
   is
    CURSOR c_traveler_info IS
