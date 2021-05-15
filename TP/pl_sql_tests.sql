@@ -37,8 +37,17 @@ END;
 ----------------------------
 
 
-
-
+--Function Test--------------
+--Anonymous block
+DECLARE
+  r_ticket TICKET%ROWTYPE;
+BEGIN
+  r_ticket := func_ticket_info( 1000 );
+  dbms_output.put_line('Ticket ID - '||r_ticket.TICKET_ID||
+    ', Traveler information - '||r_ticket.TRAVELER_ID||
+    ', Airline ID - '||r_ticket.AIRLINE_ID||
+    ', Flight ID - '||r_ticket.FLIGHT_ID||'.');
+END;
 
 
 --Trigger Test--------------
