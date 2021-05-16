@@ -14,4 +14,7 @@ CREATE OR REPLACE VIEW VW_TRAVELER_INFO AS
     FROM TRAVELER t, LUGGAGE l, BOARDINGPASS bp
     WHERE t.traveler_id = l.traveler_id AND t.traveler_id = bp.traveler_id WITH READ ONLY;
     
- 
+CREATE OR REPLACE VIEW VW_AIRPLANE_INFO AS
+	SELECT a.airline_id, a.al_company, ap.a_capacity, ap.plane_id, fl.f_route, fl.f_terminalnum
+	FROM AIRPLANE ap, AIRLINE a, FLIGHT fl 
+	WHERE a.airline_id = ap.airline_id AND a.airline_id = fl.airplane_id WITH READ ONLY;
