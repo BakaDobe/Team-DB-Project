@@ -48,7 +48,7 @@ BEGIN
     ', Airline ID - '||r_ticket.AIRLINE_ID||
     ', Flight ID - '||r_ticket.FLIGHT_ID||'.');
 END;
-
+/
 
 --Trigger Test--------------
 --DELETE TRIGGER

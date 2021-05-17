@@ -14,7 +14,8 @@
    CURSOR c_traveler_info IS
      SELECT t.traveler_id,t.t_fname, t.t_lname, l.l_numofluggage, h.h_address, ti.ticket_id, a.al_company, f.f_route
      FROM TRAVELER t, LUGGAGE l, HOTEL h, TICKET ti, AIRLINE a, FLIGHT f
-     WHERE p_traveler_id = t.traveler_id; 
+     WHERE p_traveler_id = t.traveler_id AND t.traveler_id = l.traveler_id AND t.traveler_id = h.traveler_id AND t.traveler_id = ti.traveler_id
+     AND ti.airline_id = a.airline_id AND ti.flight_id = f.flight_id ; 
         
 r_traveler_info c_traveler_info%ROWTYPE;
 
@@ -41,43 +42,6 @@ r_traveler_info c_traveler_info%ROWTYPE;
   END;
 /
 
---1st anonymous block
-DECLARE
-  P_TRAVELER_ID NUMBER;
-BEGIN
-  P_TRAVELER_ID := 10;
 
-  PROC_TRAVELER_INFO(
-    P_TRAVELER_ID => P_TRAVELER_ID
-  );
---rollback; 
-END;
-/
-
---2nd anonymous block
-DECLARE
-  P_TRAVELER_ID NUMBER;
-BEGIN
-  P_TRAVELER_ID := 13;
-
-  PROC_TRAVELER_INFO(
-    P_TRAVELER_ID => P_TRAVELER_ID
-  );
---rollback; 
-END;
-/
-
---3rd anonymous block
-DECLARE
-  P_TRAVELER_ID NUMBER;
-BEGIN
-  P_TRAVELER_ID := 15;
-
-  PROC_TRAVELER_INFO(
-    P_TRAVELER_ID => P_TRAVELER_ID
-  );
---rollback; 
-END;
-/
 
 
